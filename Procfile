@@ -1,1 +1,1 @@
-web: gunicorn snippets:app --log-file -
+web: gunicorn tutorial:app --log-file -
