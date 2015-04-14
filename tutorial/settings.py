@@ -96,7 +96,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+PROJECT_DIR=os.path.dirname(__file__)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
