@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
+from django.conf import settings
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
@@ -19,3 +20,6 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^', include('snippets.urls')),
 ]
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+)
