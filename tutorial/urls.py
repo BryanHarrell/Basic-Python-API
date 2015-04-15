@@ -5,6 +5,8 @@ from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer
 from django.conf import settings
 # ViewSets define the view behavior.
+
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
